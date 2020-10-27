@@ -7,6 +7,7 @@ export class HackerNewsAPI extends RESTDataSource {
   }
 
   articleReducer({ id, by, url, time, title } = {}) {
+    console.log('article reducer')
     return {
       id: `hn-${id}`,
       title,
@@ -29,9 +30,7 @@ export class HackerNewsAPI extends RESTDataSource {
 
   getArticlesByIds(articleIds) {
     return Promise.all(
-      articleIds.map((articleId) => {
-        this.getArticle(articleId)
-      })
+      articleIds.map((articleId) => this.getArticle(articleId))
     )
   }
 
