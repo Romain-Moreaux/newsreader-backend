@@ -7,14 +7,13 @@ export class HackerNewsAPI extends RESTDataSource {
   }
 
   articleReducer({ id, by, url, time, title } = {}) {
-    console.log('article reducer')
     return {
       id: `hn-${id}`,
       title,
       author: by,
       url,
       time,
-      source: 'hackernews',
+      source: 'HackerNews',
     }
   }
 
