@@ -52,13 +52,13 @@ export const resolvers = {
 }
 ```
 
-## data sources API
+## Data sources API
 
-### CLASS: HackerNewsAPI
+_all classes are extended from Apollo RESTDataSource_
 
-base url: `https://hacker-news.firebaseio.com/v0/`  
-all items: `topstories.json`  
-One item: `item/${articleId}.json`
+### class HackerNewsAPI
+
+base url: `https://hacker-news.firebaseio.com/v0/`
 
 | method           | param                                | description                     |
 | ---------------- | ------------------------------------ | ------------------------------- |
@@ -67,3 +67,12 @@ One item: `item/${articleId}.json`
 | getArticle       | articleId: `Number`                  | get an article by ID            |
 | getArticlesByIds | articleIds: `Array of Number`        | get several articles by ID      |
 | getAllArticles   | none                                 | get all articles                |
+
+### class NewYorkTimesAPI
+
+base url: `https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=YOUR-KEY-API`
+
+| method         | param                                | description                     |
+| -------------- | ------------------------------------ | ------------------------------- |
+| articleReducer | {id, by, url, time, title}: `Object` | return a friendly formated data |
+| getAllArticles | none                                 | get all articles                |
