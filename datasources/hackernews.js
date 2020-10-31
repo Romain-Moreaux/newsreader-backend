@@ -35,7 +35,7 @@ export class HackerNewsAPI extends RESTDataSource {
 
   async getAllArticles() {
     let articleIds = await this.getAllArticleIds()
-    let articlesSliced = articleIds.slice(0, 10)
+    let articlesSliced = articleIds.slice(0, 500)
     return Promise.all(
       articlesSliced.map((articleId) => this.getArticle(articleId))
     )
